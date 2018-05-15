@@ -1,0 +1,67 @@
+import numpy as np
+from sklearn import datasets, svm, preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn import neighbors
+from sklearn.linear_model import LinearRegression
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.datasets import make_moons, make_circles, make_classification
+from sklearn.neural_network import MLPClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.gaussian_process import GaussianProcessClassifier
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+
+abaloneDF = pd.read_csv('abalone.csv',names=['Sex','Length','Diameter','Height',
+                                             'Whole Weight','Shucked Weight',
+                                             'Viscera Weight','Shell Weight',
+                                             'Rings'])
+df.fillna(0, inplace=True)
+df.dropna(axis=0,how='all')
+print(df.describe())
+print(df.info())
+print(df.corr('kendall'))
+
+
+
+# labels = df[['0']]
+# datasets = df[['1', '2', '3', '4', '5', '6', '7', '8']]
+#
+# x_train, x_test, y_train, y_test = train_test_split(datasets, labels, test_size=0.2)
+#
+# # print('M', len(df[df['0'] == 'M']))
+# # print('F', len(df[df['0'] == 'F']))
+# # print('I', len(df[df['0'] == 'I']))
+#
+# names = ["Nearest Neighbors", "Linear SVM", "RBF SVM",
+#          "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
+#          "Naive Bayes", "QDA"]
+#
+# classifiers = [
+#     KNeighborsClassifier(3),
+#     SVC(kernel="linear", C=0.025),
+#     SVC(gamma=2, C=1),
+#     # GaussianProcessClassifier(1.0 * RBF(1.0)),
+#     DecisionTreeClassifier(max_depth=5),
+#     RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1),
+#     MLPClassifier(alpha=1),
+#     AdaBoostClassifier(),
+#     GaussianNB(),
+#     QuadraticDiscriminantAnalysis()]
+#
+# for n,i in enumerate(classifiers):
+#     clf = i
+#     clf.fit(x_train, y_train)
+#     confident = clf.score(x_test, y_test)
+#     print(names[n],'=',confident)
